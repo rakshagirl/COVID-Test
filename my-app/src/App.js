@@ -1,22 +1,30 @@
 import logo from './logo.svg';
+import {useState} from "react";
 import './App.css';
+import Button from '@material-ui/core/Button';
 
 function App() {
+
+  const [text, setText] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello, my name is boo
+          {text}
         </p>
-        <a
+        <Button variant="contained" color="secondary" onClick={() => setText(text+1)}>
+        Click Me!
+      </Button>
+        {text == 2 && <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a>}
       </header>
     </div>
   );
