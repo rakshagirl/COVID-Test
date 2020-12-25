@@ -4,6 +4,7 @@ import './App.css';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Intro from "./Intro";
+import Body from './Body';
 
 function App() {
 
@@ -18,9 +19,8 @@ function App() {
         <Typography color='primary' variant='h2'>
           COVID-19 Questionnaire
         </Typography>
-        <Intro/>
+        <Body/>
       </Container>
-
     </div>
   );
 }
