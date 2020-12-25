@@ -10,8 +10,6 @@ function Intro() {
 
 
   return (
-    // <h1> The purpose of the Coronavirus Self-Checker is to help you make decisions about seeking appropriate medical care. 
-    //     This system is not intended for the diagnosis or treatment of disease, including COVID-19. </h1>
     <>
     <Card variant='outlined'>
         <CardContent>

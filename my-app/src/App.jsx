@@ -5,6 +5,15 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Intro from "./Intro";
 import Body from './Body';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Work Sans',
+      'sans-serif',
+    ].join(','),
+  },});
 
 function App() {
 
@@ -13,15 +22,19 @@ function App() {
   
 
   return (
-    <div className="App">
-      <Container maxWidth="md" style={{ backgroundColor: '#FFEEF7', height: '100vh' }}>
-        <br/>
-        <Typography color='primary' variant='h2'>
-          COVID-19 Questionnaire
-        </Typography>
-        <Body/>
-      </Container>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Container maxWidth="md" style={{ backgroundColor: '#FFDDDD' }}>
+          <br/>
+          <Typography color='primary' variant='h2'>
+              <b>
+                COVID-19 Questionnaire
+              </b>
+          </Typography>
+          <Body/>
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 

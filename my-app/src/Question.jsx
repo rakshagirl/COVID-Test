@@ -13,6 +13,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 //props.question = text of question
 //props.onClick
+
+//props is an object that has attribute toPrint
 export default function Question(props) {
 
   return (
@@ -20,15 +22,7 @@ export default function Question(props) {
         <Card variant='outlined'>
         <CardContent>
             <Typography style={{whiteSpace: 'pre-line'}}>
-                Are you experiencing any of these
-                symptoms? {"\n"} <br></br>
-                • Fever or feeling feverish (chills, sweating){"\n"}
-                • Difficulty breathing (not severe){"\n"}
-                • New or worsening cough{"\n"}
-                • Sore throat{"\n"}
-                • Whole body aches{"\n"}
-                • Vomiting or diarrhea{"\n"}
-                • None of the above{"\n"}
+                {props.toPrint}
             </Typography>
             <br></br>
             <FormControl component="fieldset">
@@ -42,7 +36,7 @@ export default function Question(props) {
                 />
                 <FormControlLabel
                 value="false"
-                control={<Radio color="primary" />}
+                control={<Radio color="secondary" />}
                 label="No"
                 labelPlacement="start"
                 />
