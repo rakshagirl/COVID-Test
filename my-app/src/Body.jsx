@@ -64,7 +64,12 @@ function Body() {
               );
             })}
             <Grid item xs={12} md={12} lg={12}>
-              <Button size="large" variant="contained" color="primary" disableElevation>
+              <Button 
+                size="large" 
+                variant="contained" 
+                color="primary" 
+                disableElevation
+                href="/submit">
                 Submit
               </Button>
             </Grid>

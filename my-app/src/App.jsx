@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Intro from "./Intro";
 import Body from './Body';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Router from "./Router";
 
 const theme = createMuiTheme({
   typography: {
@@ -31,7 +32,7 @@ function App() {
                 COVID-19 Questionnaire
               </b>
           </Typography>
-          <Body/>
+          <Router/>
         </Container>
       </div>
     </ThemeProvider>
