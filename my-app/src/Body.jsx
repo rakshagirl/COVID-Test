@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Intro from "./Intro";
 import Question from './Question';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 function Body() {
 
@@ -59,9 +60,17 @@ function Body() {
                 <Grid item xs={12} md={12} lg={12}>
                   <Question toPrint={question}/> 
                 </Grid>
+
               );
             })}
+            <Grid item xs={12} md={12} lg={12}>
+              <Button size="large" variant="contained" color="primary" disableElevation>
+                Submit
+              </Button>
+            </Grid>
+            
          </Grid>
+         <br/>
     </>
   );
 }

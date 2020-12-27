@@ -24,7 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Container maxWidth="md" style={{ backgroundColor: '#FFDDDD' }}>
+        <Container maxWidth="md" style={{ backgroundColor: '#f1e8fc' }}>
           <br/>
           <Typography color='primary' variant='h2'>
               <b>
