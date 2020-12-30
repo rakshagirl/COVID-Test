@@ -7,8 +7,9 @@ import Intro from "./Intro";
 import Question from './Question';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import { withRouter } from "react-router-dom";
 
-function Body() {
+function Body(props) {
 
   const questions = [
       "Are you experiencing any of these symptoms?\n" +
@@ -89,8 +90,20 @@ function Body() {
                 variant="contained" 
                 color="primary" 
                 disableElevation
-                onClick={checkErrors}
-                //href="/submit"
+                onClick={() => {
+                  checkErrors();
+                  let redirect = true;
+                  answers.map((answer) => {
+                    if(answer != true && answer != false) {
+                      redirect = false;
+                    }
+                  })
+                  if(redirect){
+                    props.history.push({
+                      pathname: "/submit"
+                    });
+                  }
+                }}
                 >
                 Submit
               </Button>

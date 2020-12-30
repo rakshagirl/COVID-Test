@@ -7,6 +7,7 @@ import Intro from "./Intro";
 import Body from './Body';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Router from "./Router";
+import covid from "./covid.png";
 
 const theme = createMuiTheme({
   typography: {
@@ -18,13 +19,9 @@ const theme = createMuiTheme({
 
 function App() {
 
-  
-
-  
-
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <div className="App" styles={{ backgroundImage:`url(${covid})` }}>
         <Container maxWidth="md" style={{ backgroundColor: '#f1e8fc' }}>
           <br/>
           <Typography color='primary' variant='h2'>
