@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import {useState} from "react";
+import React, {useState} from "react";
 import './App.css';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -11,11 +11,13 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-//props.question = text of question
+//props.toPrint = text of question
 //props.onClick
+//props.index
 
 //props is an object that has attribute toPrint
 export default function Question(props) {
+
 
   return (
     <>
@@ -25,9 +27,18 @@ export default function Question(props) {
                 {props.toPrint}
             </Typography>
             <br></br>
-            <FormControl component="fieldset">
+            <FormControl component="fieldset" error={props.error === "true"}>
             <FormLabel component="legend">Choose an Answer:</FormLabel>
-            <RadioGroup row aria-label="position" name="position" defaultValue="top">
+            <RadioGroup 
+              row 
+              aria-label="position" 
+              name="position" 
+              defaultValue="top"
+              onChange={(event) => {
+                props.onClick(props.index, event.target.value);
+              }}
+              
+            >
                 <FormControlLabel
                 value="true"
                 control={<Radio color="primary" />}

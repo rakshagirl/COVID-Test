@@ -11,6 +11,7 @@ export default function Router() {
             <Switch>
                 <Route exact path="/" component={Body}/>
                 <Route path="/submit" component={Submit}/>
+                
             </Switch>
         </BrowserRouter>
     </>

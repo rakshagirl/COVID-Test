@@ -9,9 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
 export default function Submit() {
-
-  
-
   return (
     <>  
     {/* if you want to return more than one thing */}
