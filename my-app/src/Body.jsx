@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './App.css';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import { withRouter } from "react-router-dom";
 
 function Body(props) {
+
 
   const questions = [
       "Are you experiencing any of these symptoms?\n" +
@@ -80,7 +81,11 @@ function Body(props) {
             {questions.map( (question, i) => {
               return (
                 <Grid item xs={12} md={12} lg={12}>
-                  <Question toPrint={question} onClick={updateAnswers} index={i} error={errors[i].toString()}/> 
+                  <Question 
+                    toPrint={question} 
+                    onClick={updateAnswers} 
+                    index={i} 
+                    error={errors[i].toString()}/> 
                 </Grid>
               );
             })}
@@ -99,8 +104,12 @@ function Body(props) {
                     }
                   })
                   if(redirect){
+
                     props.history.push({
-                      pathname: "/submit"
+                      pathname: "/submit",
+                      state: {
+                        answerSet: answers
+                      }
                     });
                   }
                 }}

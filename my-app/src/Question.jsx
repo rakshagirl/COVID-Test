@@ -11,6 +11,8 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+
 //props.toPrint = text of question
 //props.onClick
 //props.index
@@ -52,6 +54,7 @@ export default function Question(props) {
                 labelPlacement="start"
                 />
             </RadioGroup>
+            <FormHelperText>{props.error === "true" && "You must select an answer"}</FormHelperText>
             </FormControl>
         </CardContent>
     </Card>  

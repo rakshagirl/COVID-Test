@@ -21,10 +21,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App" styles={{ backgroundImage:`url(${covid})` }}>
+      <div className="App" style={{ backgroundImage:`url(${covid})` }}>
         <Container maxWidth="md" style={{ backgroundColor: '#f1e8fc' }}>
           <br/>
-          <Typography color='primary' variant='h2'>
+          <Typography color='primary' variant='h2' style={{paddingBottom: ".3em"}}>
               <b>
                 COVID-19 Questionnaire
               </b>
