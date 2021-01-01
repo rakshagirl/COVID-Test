@@ -16,29 +16,38 @@ export default function Submit(props) {
 
     const messages = [
         "• Testing is not recommended at this time\n",
-        "• Contact your provider if symptoms worsen, testing may be recommended\n",
+        "• Contact your provider if symptoms worsen \n",
         "• Testing recommended\n",
         "• Self isolate\n",
         "• You may be asked to wear a mask\n",
         "• Practice social distancing\n",
-        "• If ≥65yo OR with chronic conditions: Obtain 30 day supply of medications\n",
+        "• Obtain 30 day supply of medications if needed \n",
         "• Monitor symptoms / Check temp twice daily x 14 days\n"
     ];
 
     useEffect(() => {
+        if (!props.location.state) {
+            return;
+        }
         let {answerSet} = props.location.state;
         let results = [];
-        switch(answerSet){
-            case (answerSet[0] && answerSet[3]):
-                results.push(messages[3]);
-            case (answerSet[3] || answerSet[4]):
-                results.push(messages[3]);
+        
+            if (answerSet[0] && answerSet[3] || answerSet[0] && answerSet[2])
+                results.push(messages[2]);
+            if (answerSet[3] || answerSet[2])
                 results.push(messages[1]);
-            default:
-                results.push(messages[4]);
-                results.push(messages[5]);
+            if (answerSet[0]){
+                results.push(messages[7]);
+                results.push(messages[3]);
+            }
+            if (answerSet[4])
+                results.push(messages[6]);
+            if (!answerSet[0])
+                results.push(messages[0]);
+            results.push(messages[4]);
+            results.push(messages[5]);
 
-        }
+        
         setMessages(results);
 
     }, []);
