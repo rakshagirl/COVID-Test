@@ -22,7 +22,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App" style={{ backgroundImage:`url(${covid})` }}>
-        <Container maxWidth="md" style={{ backgroundColor: '#f1e8fc' }}>
+        <Container maxWidth="md" style={{ backgroundColor: '#eae6ff' }}>
           <br/>
           <Typography color='primary' variant='h2' style={{paddingBottom: ".3em"}}>
               <b>

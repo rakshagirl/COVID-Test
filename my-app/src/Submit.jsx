@@ -74,6 +74,16 @@ export default function Submit(props) {
                         })}
                     </CardContent>
                 </Card>
+                <br/>
+                <Button 
+                size="large" 
+                variant="contained" 
+                color="primary" 
+                disableElevation
+                href="/"
+                >
+                Take the Quiz Again
+              </Button>
             </Grid>
 
             </Grid>
